@@ -63,5 +63,66 @@ let nroPar = document.getElementById("numeroPar");
 nroPar.addEventListener("click", saberPar);
 
 ///Crear un programa que determine si un número introducido en un Prompt es divisible por 5 o no, mostrar el resultado con console.log
+const dividirX5 = () => {
+  numero = prompt(
+    "Ingrese un numero para saber si es divisible por 5, se mostrara el resultado en la consola 👉"
+  );
+  if (numero % 5 === 0) {
+    console.log(`El número ${numero} SI divisible por 5`);
+  } else {
+    console.log(`El número ${numero} NO es divisible por 5, intenta otra vez `);
+  }
+};
+
+let div5 = document.getElementById("divPor5");
+div5.addEventListener("click", dividirX5);
 
 ///Crear un programa que determine si un número introducido en un popup es divisible por 11 y 5 o no, mostrar el resultado con console.log
+const dividirX5y11 = () => {
+  numero = prompt(
+    "Ingrese un numero para saber si es divisible por 5 y 11 a la vez, se mostrara el resultado en la consola 👉"
+  );
+  if (numero % 5 === 0 && numero % 11 === 0) {
+    console.log(`El número ${numero} SI divisible por 5 y 11 a la vez`);
+  } else {
+    console.log(
+      `El número ${numero} NO es divisible por 5 y 11 a la vez, intenta de nuevo `
+    );
+  }
+};
+
+let div5y11 = document.getElementById("divPor5y11");
+div5y11.addEventListener("click", dividirX5y11);
+
+//Crear un programa que le pida al usuario dos números en un Prompt y luego muestre en un alerta el número mayor.
+
+const mayor = () => {
+  numero1 = parseInt(prompt("Ingrese un número"));
+  numero2 = parseInt(
+    prompt("Ingrese un segundo número y se mostrará cual es el mayor")
+  );
+  if (numero1 > numero2) {
+    alert(`El número ${numero1}  es mayor al número ${numero2}`);
+  } else {
+    alert(`El número ${numero2}  es mayor al número ${numero1}`);
+  }
+};
+
+let saberMayor = document.getElementById("nroMayor");
+saberMayor.addEventListener("click", mayor);
+
+//Crear un programa que le pida al usuario primero un números al usuario a través de un prompt y luego un segundo número para luego mostrar en un alerta el número mayor, esta vez realizar el ejercicio ocupando un if ternario.
+
+const mayor2 = () => {
+  numero1 = parseInt(prompt("Ingrese un número"));
+  numero2 = parseInt(
+    prompt("Ingrese un segundo número y se mostrará cual es el mayor")
+  );
+  let cualMayor =
+    numero1 > numero2
+      ? alert(`El número ${numero1}  es mayor al número ${numero2}`)
+      : alert(`El número ${numero2}  es mayor al número ${numero1}`);
+};
+
+let saberMayor2 = document.getElementById("nroMayor2");
+saberMayor2.addEventListener("click", mayor2);
