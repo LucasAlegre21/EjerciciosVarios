@@ -126,3 +126,239 @@ const mayor2 = () => {
 
 let saberMayor2 = document.getElementById("nroMayor2");
 saberMayor2.addEventListener("click", mayor2);
+
+//Crear un programa que determine si un string introducido por un usuario empieza con un número o con una letra.
+
+/* const sabernroletra = () => {
+  estring = prompt("Ingrese un texto");
+};
+
+let palabraNroLetra = document.getElementById("nropalabra");
+palabraNroLetra.addEventListener("click", sabernroletra); */
+
+//Crear un programa donde se introduzcan los tres ángulos internos de un triángulo y se determine si el triángulo es válido o no.
+
+/* const angulos = () => {
+  ang1 = prompt("Ingrese el primer angulo");
+  ang2 = prompt("Ingrese el segundo angulo");
+  ang3 = prompt("Ingrese el tercer angulo");
+
+  let suma = ang1 + ang2 + ang3;
+  if (suma <= 180 && suma > 0) {
+  }
+};
+
+let angulosTriangulo = document.getElementById("botonAngulos");
+angulosTriangulo.addEventListener("click", angulos); */
+
+//Determinar si una palabra empieza con mayúscula o no
+// ?????????????????
+
+//Determinar si un año dado es bisiesto.
+//https://es.wikihow.com/calcular-los-a%C3%B1os-bisiestos
+//https://miniwebtool.com/es/leap-years-list/?start_year=1800&end_year=2022
+
+const añoBisiesto = () => {
+  let año = parseInt(prompt("Ingrese un año para verificar si es bisiesto"));
+
+  if (año % 4 === 0 && año % 100 !== 0) {
+    console.log("SIIII");
+  } else if (año % 400 === 0) {
+    console.log("Sii");
+  } else console.log("NO");
+};
+
+let añBi = document.getElementById("añoBisiesto");
+añBi.addEventListener("click", añoBisiesto);
+
+//Escribir un programa JavaScript en el que el programa escoge al azar un entero entre 1 y 10, luego a el usuario se le pedirá que introduzca un número en un popup para intentar adivinarlo. Si la entrada del usuario coincide con el número de conjetura, el programa mostrará un mensaje de "buen trabajo" de lo contrario mostrará un mensaje de "No corresponde"
+
+function aleatorio(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+const compararNumeros = () => {
+  let nroAzar = aleatorio(1, 10);
+  let nroUsuario = parseInt(
+    prompt(
+      "Ingrese un numero y se verificara si es el mismo que escoge la maquina, suerte!"
+    )
+  );
+  if (nroAzar == nroUsuario) {
+    console.log(
+      `Buen trabajo, es el mismo numero: tuyo ${nroUsuario} PC ${nroAzar}`
+    );
+  } else {
+    console.log(
+      `Los numeros no coinciden ingresaste ${nroUsuario} y la PC ${nroAzar}`
+    );
+  }
+};
+
+let usupcnumeros = document.getElementById("nroazarpcusuario");
+usupcnumeros.addEventListener("click", compararNumeros);
+
+// El siguiente código tiene un error que se produce en algunos casos especiales, descubrirlo y arreglarlo:
+// // Obtener edad
+/* let edad = parseInt(prompt("hola"));
+
+if (edad <= 13) { // se agrega = para tomar al niño si tiene 13 inclusive
+  console.log("Es niño");
+} else if (edad <= 18) { //se agrega else al if y =, adolescente de 14 a 18 inclusive
+  console.log("Es adolecente");
+} else {
+  console.log("Es adulto");//mayor a 18 es adulto.
+} */
+
+//Negar las siguientes expresión de forma de mantener la tabla de verdad, crear el programa que muestre el valor de la expresión a medida que se cambia los valores de a y b.
+/* 
+    !a && !b
+    !a || !b     
+
+*/
+
+///////////////////////////////////////////    Loops
+/// While
+
+//Mostrar todos los números de 1 a n aumentando de 1 en 1 donde n lo ingresa el usuario en un prompt.
+let i = 1;
+const listarNumeros = () => {
+  nroUsuario = parseInt(prompt("Ingrese un numero"));
+
+  if (nroUsuario < 40000) {
+    while (i <= nroUsuario) {
+      console.log(i);
+      i++;
+    }
+  } else {
+    result = window.confirm(
+      "El numero es muy grande podria tildar la maquina, desea continuar?"
+    );
+    if (result == true) {
+      while (i <= nroUsuario) {
+        console.log(i);
+        i++;
+      }
+    }
+  }
+};
+
+let listaNros = document.getElementById("nrosxn");
+listaNros.addEventListener("click", listarNumeros);
+
+//Mostrar todos los números de 1 a N aumentando de 2 en 2 donde n lo ingresa el usuario en un prompt.
+//let i = 1; scope global en el primer ejercicio
+const listarNumerosx2 = () => {
+  nroUsuario = parseInt(prompt("Ingrese un numero"));
+
+  if (nroUsuario < 40000) {
+    while (i <= nroUsuario) {
+      console.log(i);
+      i = i + 2;
+    } //return console.log(nroUsuario);   para mostrar el nro ingresado al final por mas que no llegue, ejemplo ingreso 10 y muestra solo hasta el 9
+  } else {
+    result = window.confirm(
+      "El numero es muy grande podria tildar la maquina, desea continuar?"
+    );
+    if (result == true) {
+      while (i <= nroUsuario) {
+        console.log(i);
+        i = i + 2;
+      }
+    }
+  } //return console.log(nroUsuario);   para mostrar el nro ingresado al final por mas que no llegue, ejemplo ingreso 10 y muestra solo hasta el 9
+};
+let listaNrosx2 = document.getElementById("nrosxnx2");
+listaNrosx2.addEventListener("click", listarNumerosx2);
+
+//Mostrar todos los números de N a 1 disminuyendo de 1 en 1 donde n lo ingresa el usuario en un prompt.
+//let i = 1; scope global en el primer ejercicio
+const listarNumerosHasta1 = () => {
+  nroUsuario = parseInt(prompt("Ingrese un numero"));
+
+  if (nroUsuario < 40000) {
+    while (i <= nroUsuario) {
+      console.log(nroUsuario);
+      nroUsuario = nroUsuario - 1;
+    }
+  } else {
+    result = window.confirm(
+      "El numero es muy grande podria tildar la maquina, desea continuar?"
+    );
+    if (result == true) {
+      while (i <= nroUsuario) {
+        console.log(nroUsuario);
+        nroUsuario = nroUsuario - 1;
+      }
+    }
+  }
+};
+
+let listaNrosa1 = document.getElementById("nrosxnHasta1");
+listaNrosa1.addEventListener("click", listarNumerosHasta1);
+
+//Escribir utilizando console.log la tabla del 9 hasta 9x10. */
+//let i = 1; scope global en el primer ejercicio
+const tablaDELnueve = () => {
+  while (i <= 10) {
+    console.log(`9 * ${i} = ${9 * i}`);
+    i++;
+  }
+};
+
+let tabla9 = document.getElementById("tabladel9");
+tabla9.addEventListener("click", tablaDELnueve);
+
+//Pedir al usuario que ingrese un número en un prompt, hacer la suma de todos los dígitos, validar que el número ingresado no contenga letras.
+
+const sumarDigNum = () => {
+  nroUsuario = prompt("Ingrese un numero para sumar sus digitos");
+};
+
+//Realizar la suma de todos los números pares entre N y M donde N y M los ingresa un usuario.
+
+/* let numPar = 0;
+let sumaTotalPar = 0; */
+
+const operacion = (x, y) => {
+  let numPar = 0;
+  let sumaTotalPar = 0;
+  if (x % 2 === 0) {
+    numPar = x;
+    while (numPar <= y) {
+      sumaTotalPar = sumaTotalPar + numPar;
+      numPar = numPar + 2;
+    }
+    console.log(sumaTotalPar);
+  } else {
+    numPar = x + 1;
+    while (numPar <= y) {
+      sumaTotalPar = sumaTotalPar + numPar;
+      numPar = numPar + 2;
+    }
+    console.log(sumaTotalPar);
+  }
+};
+
+const sumarNrosPares = () => {
+  numeroN = parseInt(prompt("Ingrese un numero"));
+  numeroM = parseInt(prompt("Ingrese otro numero"));
+
+  ///calculo de cual es menor
+  if (numeroN < numeroM) {
+    ////N menor a M
+    operacion(numeroN, numeroM);
+  } else {
+    ////M mayor a N
+    operacion(numeroM, numeroN);
+  }
+};
+
+let pares = document.getElementById("botonPar");
+pares.addEventListener("click", sumarNrosPares);
+
+//Realizar la sumatoria de los primeros N números, donde N es ingresado por el usuario.
+///???????????????????
+
+
+//Realizar el factorial de los primeros N números.
