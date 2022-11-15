@@ -550,7 +550,7 @@ const sumar2numeros = (x, y) => {
 
 const pedir2num = () => {
   num1 = parseInt(prompt("Ingrese 1 numero"));
-  num2 = parseInt(prompt("Ingrese 2do numero"));
+  num2 =parseInt(prompt("Ingrese 2do numero"));
   sumar2numeros(num1, num2);
 };
 
@@ -564,3 +564,7 @@ sum2num.addEventListener("click", pedir2num);
 
 
 //Crear una función autoejecutable que muestre "muuu" en pantalla
+const vaca=()=>{
+  alert("muuuuuuuuuuu🐄🐄🐄🐄🐄🐄")
+}
+vaca();
