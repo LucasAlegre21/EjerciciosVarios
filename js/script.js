@@ -350,12 +350,15 @@ const sumarNrosPares = () => {
   ///calculo de cual es menor
   if (numeroN < numeroM) {
     ////N menor a M
-    console.log(`Esta es la suma total de los pares entre ${numeroN} y ${numeroM} ⬇`);
+    console.log(
+      `Esta es la suma total de los pares entre ${numeroN} y ${numeroM} ⬇`
+    );
     operacion(numeroN, numeroM);
-    
   } else {
     ////M mayor a N
-    console.log(`Esta es la suma total de los pares entre ${numeroN} y ${numeroM} ⬇`);
+    console.log(
+      `Esta es la suma total de los pares entre ${numeroN} y ${numeroM} ⬇`
+    );
     operacion(numeroM, numeroN);
   }
 };
@@ -387,7 +390,7 @@ calFacto.addEventListener("click", factorial);
 
 //Encontrar todos los divisores de un número.
 const divisoresNRO = () => {
-  nroUsuario = parseInt(prompt("numero"));
+  nroUsuario = parseInt(prompt("Ingrese un número"));
   let i = 1;
   console.log(`Estos son los divisores del numero ${nroUsuario}`);
   while (i <= nroUsuario) {
@@ -404,4 +407,114 @@ let diviNum = document.getElementById("botonDivisores");
 diviNum.addEventListener("click", divisoresNRO);
 //Determinar si un número ingresado por el usuario en un loop es primo o no, validar que el número ingresado sea mayor o igual a dos.
 
+//-----------------------------------------
+
 //Crear un programa que determine si un número es perfecto o no, (se dice que un número es perfecto si el número es igual a sus divisores, ejemplos 6 = 1 + 2 + 3)
+
+const nroPerfectoDivisores = () => {
+  nroUsuario = parseInt(prompt("Ingrese un numero"));
+
+  let i = 1;
+  let sumPer = 0;
+
+  console.log(`Estos son los divisores del numero ${nroUsuario}`);
+
+  while (i < nroUsuario) {
+    if (nroUsuario % i === 0) {
+      console.log(i);
+      sumPer = sumPer + i;
+      i++;
+    } else {
+      i++;
+    }
+  }
+  if (sumPer === nroUsuario) {
+    console.log(`${nroUsuario} es un numero perfecto`);
+  } else {
+    console.log(`${nroUsuario} NO es un numero perfecto`);
+  }
+};
+
+let perfNum = document.getElementById("botonPerfecto");
+perfNum.addEventListener("click", nroPerfectoDivisores);
+
+//<-----------------------Patrones con Loop anidados----------------------------------------->
+
+//Dibujar los siguientes patrones ocupando document.write, para rellenar los espacios vacíos se debe imprimir un espacio vacío.
+
+//Cuadrado lleno:
+const cuadradoLleno = () => {
+  for (let linea = 1; linea <= 5; linea++) {
+    for (let linea2 = 1; linea2 <= 5; linea2++) {
+      document.write("*");
+    }
+    document.write("<br>");
+  }
+};
+let cl = document.getElementById("botonCuadLleno");
+cl.addEventListener("click", cuadradoLleno);
+
+/* Cuadrado hueco:
+//https://uniwebsidad.com/libros/xhtml/capitulo-3/espacios-en-blanco-y-nuevas-lineas
+
+*****
+*   *
+*   *
+*   *
+*****
+
+ */
+
+const cuadradoHueco = () => {
+  document.write("*****");
+  document.write("<br>");
+  for (let linea = 1; linea <= 3; linea++) {
+    document.write("*");
+    for (let linea2Esp = 1; linea2Esp <= 3; linea2Esp++) {
+      document.write("&nbsp;");
+      document.write("&nbsp;");
+      //ESPACIO EN BLANCO
+    }
+    document.write("*");
+    document.write("<br>");
+  }
+  document.write("*****");
+};
+
+let ch = document.getElementById("botonCuadHueco");
+ch.addEventListener("click", cuadradoHueco);
+
+//Tablero de Ajedrez:
+
+/* Tablero de Ajedrez:
+///////////////
+* * * * * * * *
+ * * * * * * * 
+* * * * * * * *
+ * * * * * * * 
+* * * * * * * *
+ * * * * * * * 
+* * * * * * * *
+ * * * * * * * 
+ ///////////////////
+
+ */
+
+const tableroAjedrez = () => {
+  for (let fila = 1; fila <= 8; fila++) {
+    if (fila % 2 === 0) {
+      document.write("&nbsp;");
+      document.write("&nbsp;");
+    }
+    for (let columna = 1; columna <= 8; columna++) {
+      document.write("*");
+      document.write("&nbsp;");
+    }
+
+    document.write("<br>");
+    document.write("&nbsp;");
+  }
+};
+
+let ta = document.getElementById("botonAjedrez");
+ta.addEventListener("click", tableroAjedrez);
