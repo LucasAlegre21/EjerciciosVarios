@@ -518,3 +518,26 @@ const tableroAjedrez = () => {
 
 let ta = document.getElementById("botonAjedrez");
 ta.addEventListener("click", tableroAjedrez);
+
+////----------------Funciones-----------------------------///
+//Crear una función que reciba un valor cualquiera y lo muestre ocupando console.log(), llamar a la función pasando el valor 5
+
+const mostrarEnconsola = (x) => {
+  x = parseInt(prompt("Ingrese un número para mostar por consola"));
+  console.log(x);
+};
+let mostrarConsola = document.getElementById("nroConsola");
+mostrarConsola.addEventListener("dblclick", mostrarEnconsola);
+
+//La siguiente función devuelve undefined en lugar de la multiplicación, se pide arreglarla
+
+function multiply(t, b) {
+  return t * b;
+  
+}
+multiply();
+//Crear una función que reciba dos valores y devuelva la suma de ellos.
+
+//Crear una función que reciba un número entero y muestre un error si el tipo de dato pasado es de otro tipo.
+
+//Crear una función autoejecutable que muestre "muuu" en pantalla
