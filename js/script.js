@@ -211,7 +211,7 @@ if (edad <= 13) { // se agrega = para tomar al niño si tiene 13 inclusive
 } */
 
 //Negar las siguientes expresión de forma de mantener la tabla de verdad, crear el programa que muestre el valor de la expresión a medida que se cambia los valores de a y b.
-/* 
+/* ????????????????????????????????????????????????????????????????
     !a && !b
     !a || !b     
 
@@ -221,10 +221,10 @@ if (edad <= 13) { // se agrega = para tomar al niño si tiene 13 inclusive
 /// While
 
 //Mostrar todos los números de 1 a n aumentando de 1 en 1 donde n lo ingresa el usuario en un prompt.
-let i = 1;
+
 const listarNumeros = () => {
   nroUsuario = parseInt(prompt("Ingrese un numero"));
-
+  let i = 1;
   if (nroUsuario < 40000) {
     while (i <= nroUsuario) {
       console.log(i);
@@ -232,7 +232,7 @@ const listarNumeros = () => {
     }
   } else {
     result = window.confirm(
-      "El numero es muy grande podria tildar la maquina, desea continuar?"
+      "El numero es muy grande podria tildar la PC, desea continuar?"
     );
     if (result == true) {
       while (i <= nroUsuario) {
@@ -247,8 +247,9 @@ let listaNros = document.getElementById("nrosxn");
 listaNros.addEventListener("click", listarNumeros);
 
 //Mostrar todos los números de 1 a N aumentando de 2 en 2 donde n lo ingresa el usuario en un prompt.
-//let i = 1; scope global en el primer ejercicio
+
 const listarNumerosx2 = () => {
+  let i = 1;
   nroUsuario = parseInt(prompt("Ingrese un numero"));
 
   if (nroUsuario < 40000) {
@@ -258,7 +259,7 @@ const listarNumerosx2 = () => {
     } //return console.log(nroUsuario);   para mostrar el nro ingresado al final por mas que no llegue, ejemplo ingreso 10 y muestra solo hasta el 9
   } else {
     result = window.confirm(
-      "El numero es muy grande podria tildar la maquina, desea continuar?"
+      "El numero es muy grande podria tildar la PC, desea continuar?"
     );
     if (result == true) {
       while (i <= nroUsuario) {
@@ -271,9 +272,10 @@ const listarNumerosx2 = () => {
 let listaNrosx2 = document.getElementById("nrosxnx2");
 listaNrosx2.addEventListener("click", listarNumerosx2);
 
-//Mostrar todos los números de N a 1 disminuyendo de 1 en 1 donde n lo ingresa el usuario en un prompt.
-//let i = 1; scope global en el primer ejercicio
+//////////////////////Mostrar todos los números de N a 1 disminuyendo de 1 en 1 donde n lo ingresa el usuario en un prompt.
+
 const listarNumerosHasta1 = () => {
+  let i = 1;
   nroUsuario = parseInt(prompt("Ingrese un numero"));
 
   if (nroUsuario < 40000) {
@@ -283,7 +285,7 @@ const listarNumerosHasta1 = () => {
     }
   } else {
     result = window.confirm(
-      "El numero es muy grande podria tildar la maquina, desea continuar?"
+      "El numero es muy grande podria tildar la PC, desea continuar?"
     );
     if (result == true) {
       while (i <= nroUsuario) {
@@ -298,8 +300,9 @@ let listaNrosa1 = document.getElementById("nrosxnHasta1");
 listaNrosa1.addEventListener("click", listarNumerosHasta1);
 
 //Escribir utilizando console.log la tabla del 9 hasta 9x10. */
-//let i = 1; scope global en el primer ejercicio
+
 const tablaDELnueve = () => {
+  let i = 1;
   while (i <= 10) {
     console.log(`9 * ${i} = ${9 * i}`);
     i++;
@@ -310,7 +313,7 @@ let tabla9 = document.getElementById("tabladel9");
 tabla9.addEventListener("click", tablaDELnueve);
 
 //Pedir al usuario que ingrese un número en un prompt, hacer la suma de todos los dígitos, validar que el número ingresado no contenga letras.
-
+//??????????????????????????????????
 const sumarDigNum = () => {
   nroUsuario = prompt("Ingrese un numero para sumar sus digitos");
 };
@@ -347,9 +350,12 @@ const sumarNrosPares = () => {
   ///calculo de cual es menor
   if (numeroN < numeroM) {
     ////N menor a M
+    console.log(`Esta es la suma total de los pares entre ${numeroN} y ${numeroM} ⬇`);
     operacion(numeroN, numeroM);
+    
   } else {
     ////M mayor a N
+    console.log(`Esta es la suma total de los pares entre ${numeroN} y ${numeroM} ⬇`);
     operacion(numeroM, numeroN);
   }
 };
@@ -360,5 +366,42 @@ pares.addEventListener("click", sumarNrosPares);
 //Realizar la sumatoria de los primeros N números, donde N es ingresado por el usuario.
 ///???????????????????
 
-
 //Realizar el factorial de los primeros N números.
+// https://factorialhr.ar/numero-funcion-factorial
+const factorial = () => {
+  nroUsuario = parseInt(prompt("Ingrese un numero"));
+  console.log(`Este es el factorial del numero ${nroUsuario}`);
+  let i = 1;
+  let resultado = 1;
+  while (i <= nroUsuario) {
+    resultado = resultado * i;
+    i++;
+  }
+  console.log(resultado);
+};
+
+let calFacto = document.getElementById("botonFacto");
+calFacto.addEventListener("click", factorial);
+
+//---------------Ejercicios de divisores con while (o for)----------------------//
+
+//Encontrar todos los divisores de un número.
+const divisoresNRO = () => {
+  nroUsuario = parseInt(prompt("numero"));
+  let i = 1;
+  console.log(`Estos son los divisores del numero ${nroUsuario}`);
+  while (i <= nroUsuario) {
+    if (nroUsuario % i === 0) {
+      console.log(i);
+      i++;
+    } else {
+      i++;
+    }
+  }
+};
+
+let diviNum = document.getElementById("botonDivisores");
+diviNum.addEventListener("click", divisoresNRO);
+//Determinar si un número ingresado por el usuario en un loop es primo o no, validar que el número ingresado sea mayor o igual a dos.
+
+//Crear un programa que determine si un número es perfecto o no, (se dice que un número es perfecto si el número es igual a sus divisores, ejemplos 6 = 1 + 2 + 3)
