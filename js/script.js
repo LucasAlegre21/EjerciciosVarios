@@ -531,13 +531,36 @@ mostrarConsola.addEventListener("dblclick", mostrarEnconsola);
 
 //La siguiente función devuelve undefined en lugar de la multiplicación, se pide arreglarla
 
-function multiply(t, b) {
-  return t * b;
-  
+/* function multiply(a, b){
+  a * b
+} 
+*/
+function multiplicacion(a, b) {
+  return (resultado = a * b);
 }
-multiply();
+multiplicacion(4, 2);
+
 //Crear una función que reciba dos valores y devuelva la suma de ellos.
 
+const sumar2numeros = (x, y) => {
+  resultSuma = x + y;
+  console.log(`El resultado de la suma de ${x} y ${y} es = ${resultSuma}`);
+};
+//-----
+
+const pedir2num = () => {
+  num1 = parseInt(prompt("Ingrese 1 numero"));
+  num2 = parseInt(prompt("Ingrese 2do numero"));
+  sumar2numeros(num1, num2);
+};
+
+let sum2num = document.getElementById("2numsuma");
+sum2num.addEventListener("click", pedir2num);
+
 //Crear una función que reciba un número entero y muestre un error si el tipo de dato pasado es de otro tipo.
+
+
+
+
 
 //Crear una función autoejecutable que muestre "muuu" en pantalla
