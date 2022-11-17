@@ -708,3 +708,36 @@ const buscarColor = () => {
 
 let btnColor = document.getElementById("botonColor");
 btnColor.addEventListener("click", buscarColor);
+/*---------------------------------------String y arrays----------------------------------------------------------------------------*/
+
+//El usuario ingrese un string con varias palabras separadas por coma en un popup y se deben convertir en un array, (el usuario ingresa: "1,2,3,4,5" y se convierte en [1,2,3,4,5])
+
+const stringArray = () => {
+  let texto = prompt(
+    "Ingrese palabras separadas por coma y se creara un array con las mismas (ejemplo = 1,2,3) El array será [1,2,3]"
+  );
+  let arrayVacio = texto.split(",");
+  console.log(texto);
+  console.log(arrayVacio);
+};
+
+let btnstrArr = document.getElementById("botonStringArray");
+btnstrArr.addEventListener("click",stringArray);
+
+//Convertir un array ingresado dentro del código en un string (existe un método en javascript para hacerlo)
+
+
+
+
+
+
+
+/*---------------------------------------------------------Unión, intersección y conteo---------------------------*/
+
+//Existen dos arrays, cada uno con 5 palabras, generar un nuevo array con la intersección de ambos elementos. (Ejemplo: [1,2,3] unión [1,2,4] = [1,2]
+
+//Existen dos arrays, cada uno con 5 palabras, generar un nuevo array con la unión de ambos elementos, (Ejemplo: [1,2,3] unión [1,2,4] = [1,1,2,2,3,4]
+
+//El usuario ingresa dos conjuntos de números separados por coma, el programa debe determinar si ambos conjuntos tienen la misma cantidad de números.
+
+//El usuario ingresa dos conjuntos de números separados por coma, si ambos conjuntos tienen la misma cantidad de elementos mostrar un arreglo que contenga la suma de cada elemento. (Ejemplo: [1,2,3] + [2,3,4] = [3,5,7])
