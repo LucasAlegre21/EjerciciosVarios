@@ -550,7 +550,7 @@ const sumar2numeros = (x, y) => {
 
 const pedir2num = () => {
   num1 = parseInt(prompt("Ingrese 1 numero"));
-  num2 =parseInt(prompt("Ingrese 2do numero"));
+  num2 = parseInt(prompt("Ingrese 2do numero"));
   sumar2numeros(num1, num2);
 };
 
@@ -559,12 +559,152 @@ sum2num.addEventListener("click", pedir2num);
 
 //Crear una función que reciba un número entero y muestre un error si el tipo de dato pasado es de otro tipo.
 
+const datoDifNum = () => {
+  let datoRecibido = parseFloat(prompt("Hola ingresa un dato"));
+  if (isNaN(datoRecibido)) {
+    console.log("Ingresaste un dato que no es del tipo NUMBER");
+  } else {
+    console.log("Ingresaste un número, bien!");
+  }
+};
 
-
-
-
+let btnDatoDif = document.getElementById("botonDATOdif");
+btnDatoDif.addEventListener("click", datoDifNum);
 //Crear una función autoejecutable que muestre "muuu" en pantalla
-const vaca=()=>{
+/* const vaca=()=>{
   alert("muuuuuuuuuuu🐄🐄🐄🐄🐄🐄")
 }
-vaca();
+vaca(); */
+
+/*-------------------------------------------------------------Array------------------------------------------------------------------*/
+//////////////////Dado el array = [1,2,3,4,5,6]
+
+let arrayPrincipal = [1, 2, 3, 4, 5, 6];
+
+//Iterar por todos los elementos dentro de un array utilizando while y mostrarlos en pantalla.
+const itewhile = () => {
+  let i = 0;
+  console.log("Estos son los datos del array utilizando WHILE = ");
+  while (i < arrayPrincipal.length) {
+    console.log(arrayPrincipal[i]);
+    i++;
+  }
+};
+let btnitewhile = document.getElementById("botonIteWhile");
+btnitewhile.addEventListener("click", itewhile);
+
+//Iterar por todos los elementos dentro de un array utilizando for y mostrarlos en pantalla.
+
+const iteFor = () => {
+  console.log("Estos son los datos del array utilizando FOR =");
+  for (let i = 0; i < arrayPrincipal.length; i++) {
+    console.log(arrayPrincipal[i]);
+  }
+};
+let btnitefor = document.getElementById("botonIteFor");
+btnitefor.addEventListener("click", iteFor);
+
+///Iterar por todos los elementos dentro de un array utilizando .forEach y mostrarlos en pantalla.
+
+const iteForeach = () => {
+  console.log("Estos son los datos del array utilizando FOR EACH =");
+  arrayPrincipal.forEach((dato) => {
+    console.log(dato);
+  });
+};
+
+let btniteforeach = document.getElementById("botonIteEach");
+btniteforeach.addEventListener("click", iteForeach);
+
+//Mostrar todos los elementos dentro de un array sumándole uno a cada uno.
+
+const suma1array = () => {
+  console.log("Estos son los datos del array sumandole uno a cada elemento =");
+  for (let i = 0; i < arrayPrincipal.length; i++) {
+    console.log(arrayPrincipal[i] + 1);
+  }
+};
+
+let btnarray1 = document.getElementById("botonArray+1");
+btnarray1.addEventListener("click", suma1array);
+
+//Generar una copia de un array pero con todos los elementos incrementado en 1.
+const arraysumandouno = () => {
+  let arrayMasUno = arrayPrincipal.map((x) => {
+    return x + 1;
+  });
+  console.log("Este es el array principal");
+  console.log(arrayPrincipal);
+  console.log("Este es el array nuevo incrementado en 1 cada valor");
+  console.log(arrayMasUno);
+  console.log("--------------------------------");
+};
+
+let arraysumuno = document.getElementById("arraynuevomasuno");
+arraysumuno.addEventListener("click", arraysumandouno);
+
+//Calcular el promedio
+let promedio = 0;
+const promediodeArray = () => {
+  arrayPrincipal.map((x) => {
+    promedio = promedio + x;
+  });
+  console.log("Este es el array principal");
+  console.log(arrayPrincipal);
+  console.log("Este es la suma total");
+  console.log(promedio);
+  console.log("Este es el promedio");
+  console.log(promedio / arrayPrincipal.length);
+  console.log("--------------------------------");
+};
+
+let promArray = document.getElementById("promArray");
+promArray.addEventListener("click", promediodeArray);
+
+//Crear un array vacío, luego generar 20 números al azar y guardarlos en un array.
+const array20azar = () => {
+  let nrosAzarArray = [];
+  for (let i = 1; i <= 20; i++) {
+    nrosAzarArray.push(aleatorio(1, 50));
+  }
+  console.log("Este el array nuevo con 20 números al azar");
+  console.log(nrosAzarArray);
+};
+
+let btn20azar = document.getElementById("boton20azar");
+btn20azar.addEventListener("click", array20azar);
+
+//Crear un array vacío, luego generar N números al azar y guardarlos en un array, N es introducido por el usuario a través de un prompt.
+
+const array20azarUsuario = () => {
+  let nrosAzarArray = [];
+  let USU = parseInt(
+    prompt("¿Cuantos numeros quiere que tenga el nuevo array?")
+  );
+  for (let i = 1; i <= USU; i++) {
+    nrosAzarArray.push(aleatorio(1, 50));
+  }
+  console.log(`Este el array nuevo con ${USU} números al azar`);
+  console.log(nrosAzarArray);
+};
+
+let btn20azarUsuario = document.getElementById("botonAzarUsuario");
+btn20azarUsuario.addEventListener("click", array20azarUsuario);
+
+//dado un array que contiene ["azul", "amarillo", "rojo", "verde", "café", "rosa"] determinar si un color introducido por el usuario a través de un prompt se encuentra dentro del array o no.
+
+let coloresArray = ["azul", "amarillo", "rojo", "verde", "café", "rosa"];
+const buscarColor = () => {
+  let colorUsuario = prompt(
+    "Ingrese un color para buscar en el array"
+  ).toUpperCase();
+  let encontrado = coloresArray.find((x) => x.toUpperCase() == colorUsuario);
+  if (!encontrado) {
+    console.log(`El color ${colorUsuario} no se encuentra en el array`);
+  } else {
+    console.log(`El color ${colorUsuario} está en el array 👌`);
+  }
+};
+
+let btnColor = document.getElementById("botonColor");
+btnColor.addEventListener("click", buscarColor);
