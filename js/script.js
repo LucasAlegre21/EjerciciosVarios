@@ -722,22 +722,40 @@ const stringArray = () => {
 };
 
 let btnstrArr = document.getElementById("botonStringArray");
-btnstrArr.addEventListener("click",stringArray);
+btnstrArr.addEventListener("click", stringArray);
 
 //Convertir un array ingresado dentro del código en un string (existe un método en javascript para hacerlo)
 
+const paseArrayString = () => {
+  console.log("Este es el array Colores en formato string =");
+  console.log(coloresArray.toString());
+};
 
-
-
-
-
+let btnArrStr = document.getElementById("botonArrayString");
+btnArrStr.addEventListener("click", paseArrayString);
 
 /*---------------------------------------------------------Unión, intersección y conteo---------------------------*/
 
 //Existen dos arrays, cada uno con 5 palabras, generar un nuevo array con la intersección de ambos elementos. (Ejemplo: [1,2,3] unión [1,2,4] = [1,2]
 
+let primeroArray = ["guitarra", "bajo", "bateria", "piano", "trompeta"];
+let segundoArray = ["bajo", "piano", "ukulele", "triangulo", "bateria"];
+
+const interArray = () => {
+  let instrumentos = primeroArray.filter((x) => segundoArray.includes(x));
+  console.log(instrumentos);
+};
+
+let btnInstrumentos = document.getElementById("botonInstrumentos");
+btnInstrumentos.addEventListener("click", interArray);
+
 //Existen dos arrays, cada uno con 5 palabras, generar un nuevo array con la unión de ambos elementos, (Ejemplo: [1,2,3] unión [1,2,4] = [1,1,2,2,3,4]
 
+
+
+
 //El usuario ingresa dos conjuntos de números separados por coma, el programa debe determinar si ambos conjuntos tienen la misma cantidad de números.
+
+
 
 //El usuario ingresa dos conjuntos de números separados por coma, si ambos conjuntos tienen la misma cantidad de elementos mostrar un arreglo que contenga la suma de cada elemento. (Ejemplo: [1,2,3] + [2,3,4] = [3,5,7])
