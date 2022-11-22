@@ -3,16 +3,18 @@ Escribir un programa que muestre un prompt donde el usuario ingresa un número, 
 
 const sumatoria = () => {
   numero1 = prompt("Ingrese un número para sumar");
-  numero2 = prompt("Ingrese un segundo número para sumar");
+
+  numero2 = prompt("numero2 por favor");
+
   resultado = parseInt(numero1) + parseInt(numero2);
   alert(
     `Este es el resultado de la suma entre los numeros ${numero1} y ${numero2} es =${resultado}`
   );
 };
 
-let boton = document.getElementById("sumaDosNumeros");
-boton.addEventListener("click", sumatoria);
+let btnSumar2numeros = document.getElementById("sumaDosNumeros");
 
+btnSumar2numeros.addEventListener("click", sumatoria);
 /* Crear un programa donde el usuario ingrese en un prompt la temperatura en Celcius y el programa muestre en una alerta la temperatura en Fahrenheit.*/
 
 const temperatura = () => {
@@ -751,11 +753,42 @@ btnInstrumentos.addEventListener("click", interArray);
 
 //Existen dos arrays, cada uno con 5 palabras, generar un nuevo array con la unión de ambos elementos, (Ejemplo: [1,2,3] unión [1,2,4] = [1,1,2,2,3,4]
 
+let frutasArray = ["Manzana", "Pera", "Frutilla", "Banana", "Cereza"];
+let verdurasArray = ["Tomate", "Lechuga", "Palta", "Cebolla", "Zapallo"];
 
+const compraFruVer = () => {
+  changuito = frutasArray.concat(verdurasArray);
+  console.log("Este es tu changuito con frutas y verduras");
+  console.log(changuito);
+};
 
+let gondola = document.getElementById("botonCompraFruVer");
+gondola.addEventListener("click", compraFruVer);
 
 //El usuario ingresa dos conjuntos de números separados por coma, el programa debe determinar si ambos conjuntos tienen la misma cantidad de números.
 
+const dosArrayCantidad = () => {
+  let texto = prompt(
+    "Ingrese numeros separadas por coma y se creara un array con las mismas"
+  );
+  let arrayVacio = texto.split(",");
+  let texto2 = prompt(
+    "Ingrese numeros separadas por coma y se creara un array con las mismas"
+  );
+  let arrayVacio2 = texto2.split(",");
 
+  console.log(texto);
+  console.log(arrayVacio);
+  console.log(texto2);
+  console.log(arrayVacio2);
+  if (arrayVacio.length === arrayVacio2.length) {
+    console.log("Tienen la misma cantidad de numeros");
+  } else {
+    console.log("No tienen la misma cantidad de numeros");
+  }
+};
+
+let dosArray = document.getElementById("botonDosArrayIguales?");
+dosArray.addEventListener("click", dosArrayCantidad);
 
 //El usuario ingresa dos conjuntos de números separados por coma, si ambos conjuntos tienen la misma cantidad de elementos mostrar un arreglo que contenga la suma de cada elemento. (Ejemplo: [1,2,3] + [2,3,4] = [3,5,7])

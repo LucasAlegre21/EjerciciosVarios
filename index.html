@@ -29,13 +29,19 @@
                         <li>
                             <button id="tipoDato">Para saber el tipo de dato de a[]</button>
                         </li>
-                        <li><button id="sumaDosNumeros">Suma de dos numeros</button></li>
+
+                        <li>
+
+                            <button id="sumaDosNumeros">Suma de dos numeros</button>
+                        </li>
                         <li>
                             <button id="cambioTemperatura">
                                 Temperatura de Celsius a Farenheit 🌡
                             </button>
                         </li>
-                        <li><button id="dividir">Dividir un número por 10 ✒</button></li>
+                        <li>
+                            <button id="dividir">Dividir un número por 10 ✒</button>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -198,21 +204,31 @@
             <div class="btn-group-vertical pe-2 col-6" role="group" aria-label="Vertical button group">
                 <button class="btn btn-light" id="botonStringArray">String separado por coma a array nuevo</button>
                 <button class="btn btn-light" data-bs-placement="bottom" data-bs-toggle="popover"
-                 data-bs-trigger="hover"
-                data-bs-content="[azul,amarillo,rojo,verde,café,rosa]" id="botonArrayString">Array Colores a
+                    data-bs-trigger="hover" data-bs-content="[azul,amarillo,rojo,verde,café,rosa]"
+                    id="botonArrayString">Array Colores a
                     string</button>
-                
+
 
             </div>
-            <div class="btn-group-vertical pe-2 col-4" role="group" aria-label="Vertical button group">
-                <button class="btn btn-light"data-bs-placement="top" data-bs-toggle="popover"
-                data-bs-trigger="hover"
-               data-bs-content="[guitarra,bajo,bateria,piano,trompeta]
-               [bajo,piano,ukulele,triangulo,bateria]" id="botonInstrumentos">Interseccion en array de instrumentos</button>
+            <div class="btn-group-vertical pe-2 col-6" role="group" aria-label="Vertical button group">
+                <button class="btn btn-light" data-bs-placement="top" data-bs-toggle="popover" data-bs-trigger="hover"
+                    data-bs-content="[guitarra,bajo,bateria,piano,trompeta]
+               [bajo,piano,ukulele,triangulo,bateria]" id="botonInstrumentos">Interseccion en array de
+                    instrumentos</button>
+
+                <button class="btn btn-light" data-bs-placement="top" data-bs-toggle="popover" data-bs-trigger="hover"
+                    data-bs-content="[Manzana,Pera,Frutilla,Banana,Cereza]
+                    [Tomate,Lechuga,Palta,Cebolla,Zapallo]" id="botonCompraFruVer">Union de dos array</button>
+
                
+                    <button class="btn btn-light" id="botonDosArrayIguales?">Ingresar dos array y verificar si tienen la misma cantidad</button>
+                    
+
+
 
 
             </div>
+
         </div>
 
     </div>
@@ -230,8 +246,19 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
         integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
         crossorigin="anonymous"></script>
-    <script>const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
-        const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))</script>
+    <script>
+        const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+        const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+
+    </script>
+    <script>
+        const myModal = document.getElementById('myModal')
+        const myInput = document.getElementById('myInput')
+
+        myModal.addEventListener('shown.bs.modal', () => {
+            myInput.focus()
+        })</script>
+
 </body>
 
 </html>
